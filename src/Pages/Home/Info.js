@@ -8,7 +8,7 @@ const Info = () => {
 
     return (
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 px-12 '>
-            <InfoCard cardTitle="Opening Hours" cardDescription='Friday-Wednesday. 9:00 AM to 6:00 PM' bgClass="bg-gradient-to-r from-secondary to-primary" img={clock}></InfoCard>
+            <InfoCard cardTitle="Opening Hours" cardDescription={<>Friday-Wednesday.<br/>9:00 AM to 6:00 PM</>} bgClass="bg-gradient-to-r from-secondary to-primary" img={clock}></InfoCard>
             <InfoCard cardTitle="Our Locations" cardDescription='Old bus stand, Tangail' bgClass="bg-accent" img={marker}></InfoCard>
             <InfoCard cardTitle="Contact Us" cardDescription='01111111' bgClass="bg-gradient-to-r from-secondary to-primary" img={phone}></InfoCard>
         </div>

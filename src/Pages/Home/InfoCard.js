@@ -8,8 +8,8 @@ const InfoCard = ({bgClass, img , cardTitle, cardDescription}) => {
                     <img src={img} alt="Album" />
 
                 </figure>
-                <div className="card-body">
-                    <h2 className="card-title">{cardTitle}</h2>
+                <div className="card-body text-left">
+                    <h2 className="card-title text-left">{cardTitle}</h2>
                     <p>{cardDescription}</p>
                 </div>
             </div>

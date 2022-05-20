@@ -15,7 +15,7 @@ const MakeAppointment = () => {
             <div className='flex-1 text-white p-5'>
                 <h3 className='text-xl text-primary font-bold'>Appointment</h3>
                 <h2 className='text-3xl text-white'>Make an Appointment Today</h2>
-                <p className='text-white'>Are you looking for Best Dentist or Dentist near me or Best Dental Clinic in Mirpur, Dhaka, Bangladesh? Yes, you are in the right place. Make your appointment today .</p>
+                <p className='text-white'>Are you looking for Best Dentist or Dentist near me or Best Dental Clinic in New York? Yes, you are in the right place. Make your appointment today .</p>
                 <PrimaryButton>Get Started</PrimaryButton>
             </div>
         </section>

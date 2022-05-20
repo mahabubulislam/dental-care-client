@@ -21,7 +21,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">Dental Care</Link>
                 </div>
                 <div className="navbar-end hidden md:flex">
                     <ul className="menu menu-horizontal p-0 mr-6">

@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><Link to='/login'>Login</Link></li>
     </>
     return (
-        <div>
+        <div className="sticky top-0 z-[900]">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">

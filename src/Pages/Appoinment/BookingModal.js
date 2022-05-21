@@ -5,9 +5,7 @@ const BookingModal = ({ treatment, setTreatment, date }) => {
     const { name, slots } = treatment;
     const handleSubmit = e => {
         e.preventDefault()
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const phone = e.target.phone.value;
+        
         setTreatment(null)
     }
     return (

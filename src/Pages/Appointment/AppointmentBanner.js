@@ -6,8 +6,7 @@ import 'react-day-picker/dist/style.css';
 
 const AppointmentBanner = ({ date, setDate }) => {
     const day = new Date()
-    
-    console.log()
+
     return (
         <div style={{
             background: `url(${bg})`,

@@ -4,13 +4,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const BookingModal = ({ treatment, setTreatment, date }) => {
+const BookingModal = ({ treatment, setTreatment, date, refetch }) => {
     const [user] = useAuthState(auth);
     const { _id, name, slots } = treatment;
     const formatedDate = format(date, 'PP')
     const handleSubmit = e => {
         e.preventDefault()
-        const slot = e.target.slot.value
+        const slots = e.target.slot.value
         const phone = e.target.phone.value
 
         const boooking = {
@@ -19,7 +19,7 @@ const BookingModal = ({ treatment, setTreatment, date }) => {
             patientName: user?.displayName,
             patient: user?.email,
             date: formatedDate,
-            slot,
+            slots,
             phone
         }
         fetch('https://afternoon-inlet-07025.herokuapp.com/booking', {
@@ -32,13 +32,15 @@ const BookingModal = ({ treatment, setTreatment, date }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast.success(`Your appointment for ${name} is booked in ${formatedDate} at ${slot}`);
+                    toast.success(`Your appointment for ${name} is booked in ${formatedDate} at ${slots}`);
                 }
                 else {
-                    toast.warning(`You have already an appointment for ${name} at ${formatedDate} , ${slot}`);
+                    toast.warning(`You have already an appointment for ${name} at ${formatedDate}}`);
                 }
+                setTreatment(null)
+                refetch()
             })
-        setTreatment(null)
+
     }
     return (
         <div>
@@ -51,7 +53,7 @@ const BookingModal = ({ treatment, setTreatment, date }) => {
                         <input type="text" className='input input-bordered bg-base-200  focus:outline-none w-full p-2 mb-2' value={format(date, 'PP')} disabled />
                         <select name="slot" className="select select-bordered w-full bg-base-200 p-2 mb-2 focus:outline-none">
                             {
-                                slots.map((slot, index) => <option
+                                slots?.map((slot, index) => <option
                                     key={index}
                                     value={slot}
                                 >{slot}</option>)
